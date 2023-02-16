@@ -14,7 +14,8 @@ public class EduLoginController {
 
     @GetMapping("/info")
     public Result info(){
-        return Result.ok().data("roles",new String[]{"editor"}).data("name","editor").data("avatar","https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif");
+        return Result.ok().data("roles",new String[]{"editor"}).data("name","editor").data("avatar","https://education-online0101.oss-cn-nanjing.aliyuncs." +
+                "com/2023/01/30/715077a104b842b6a57a3c594eba8e8dgirl01.jpg");
     }
 
     @PostMapping("/logout")

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.onlineSchool.eduService.mapper.EduCourseMapper">
+    <!--定义映射关系-->
+    <resultMap id="CourseDetailMap" type="com.onlineSchool.eduService.entity.vo.CourseDetailVo">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="description" property="description"/>
+        <result column="lesson_num" property="lessonNum"/>
+        <result column="price" property="price"/>
+        <result column="name" property="teacherName"/>
+        <result column="subjectId" property="subjectId"/>
+        <result column="subjectTitle" property="subjectTitle"/>
+        <result column="parentId" property="parentId"/>
+        <result column="parentTitle" property="parentTitle"/>
+        <result column="cover" property="cover"/>
+    </resultMap>
+    <!--定义SQL语句-->
+    <select id="selectCourseDetailById" resultMap="CourseDetailMap">
+        select course.id, course.title,description.description,course.lesson_num, course.price,
+               teacher.name, subject.id as subjectId,subject.title as subjectTitle, parent.id as parentId, parent.title as parentTitle, cover
+        from edu_course as course
+                 LEFT JOIN edu_subject as subject ON course.subject_id = subject.id
+                 LEFT JOIN edu_subject as parent ON parent.id = subject.parent_id
+                 LEFT JOIN edu_teacher as teacher ON teacher.id = course.teacher_id
+                 LEFT JOIN edu_course_description as description ON description.id = course.id
+        where course.id = #{courseId}
+    </select>
+</mapper>

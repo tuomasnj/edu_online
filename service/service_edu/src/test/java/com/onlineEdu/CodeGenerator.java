@@ -41,7 +41,7 @@ public class CodeGenerator {
 
         // 4、包配置
         PackageConfig pc = new PackageConfig();
-        //包名 com.onlineSchool.edu
+        //包名 com.onlineSchool.eduService
         pc.setModuleName("eduService"); //模块名
         pc.setParent("com.onlineSchool");
         pc.setController("controller");
@@ -52,7 +52,7 @@ public class CodeGenerator {
 
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("edu_subject");
+        strategy.setInclude("edu_video");
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的策略
         strategy.setTablePrefix(pc.getModuleName() + "_"); //生成实体时去掉表前缀
 

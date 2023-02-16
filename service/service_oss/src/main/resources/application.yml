@@ -5,8 +5,6 @@ server:
 spring:
   application:
     name: service-oss
-  profiles:
-    active: dev
 
 #阿里云 OSS
 #不同的服务器，地址不同
