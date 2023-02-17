@@ -1,0 +1,28 @@
+# 服务端口
+server:
+  port: 8003
+# 服务名称
+spring:
+  application:
+    name: service-vod
+
+# 阿里云秘钥
+aliyun:
+  vod:
+    file:
+      keyid: LTAI5tReEtwic7ZVUiZJEsMV
+      keysecret: Wf6NGIoDhaUwSr43Amcte7t4fUJRsC
+
+spring:
+  servlet:
+    multipart:
+      # 2M
+      max-file-size: 2048MB
+      # 2M
+      max-request-size: 2048MB
+
+# nacos服务地址
+spring:
+  cloud:
+    nacos:
+      discovery.server-addr: 127.0.0.1:8848
