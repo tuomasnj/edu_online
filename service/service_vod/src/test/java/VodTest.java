@@ -27,7 +27,7 @@ public class VodTest {
 
         //2.根据视频id获取播放地址的信息，封装成response对象返回
         GetPlayInfoRequest request = new GetPlayInfoRequest();
-        request.setVideoId("bfc9db10ac5871edbfa60675a0ec0102");
+        request.setVideoId("f4b8e9d0add271edbfcd0675a0ec0102");
         GetPlayInfoResponse response = defaultAcsClient.getAcsResponse(request);
 
         //3.从response对象中获取url
