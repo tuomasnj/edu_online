@@ -17,10 +17,6 @@ import java.util.Map;
 public class VideoController {
     @Autowired
     VodService vodService;
-    @GetMapping
-    public Result dd(){
-        return Result.ok();
-    }
 
     //上传视频到阿里云
     @PostMapping("/upload")

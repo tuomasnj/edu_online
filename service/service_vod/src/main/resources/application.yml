@@ -5,6 +5,16 @@ server:
 spring:
   application:
     name: service-vod
+  # nacos服务地址
+  cloud:
+    nacos:
+      discovery.server-addr: 127.0.0.1:8848
+  servlet:
+    multipart:
+      # 2M
+      max-file-size: 2048MB
+      # 2M
+      max-request-size: 2048MB
 
 # 阿里云秘钥
 aliyun:
@@ -13,16 +23,3 @@ aliyun:
       keyid: LTAI5tReEtwic7ZVUiZJEsMV
       keysecret: Wf6NGIoDhaUwSr43Amcte7t4fUJRsC
 
-spring:
-  servlet:
-    multipart:
-      # 2M
-      max-file-size: 2048MB
-      # 2M
-      max-request-size: 2048MB
-
-# nacos服务地址
-spring:
-  cloud:
-    nacos:
-      discovery.server-addr: 127.0.0.1:8848
